@@ -48,7 +48,10 @@ else
     
     sj_gash_print_title "Burn iso to device (rdisks speeds up process)"
     sj_gash_print_body "sudo dd bs=1m if=file.iso of=/dev/rdisk{xxx}"
-  
+    
+    sj_gash_print_title "Format disk"
+    sj_gash_print_body "sudo dd bs=4096 if=/dev/zero of=/dev/sdcard/sd"
+      
   elif [ $CHEATSHEET == "diskutil" ]; then
     
     sj_gash_print_title "Unmount an entire disk"
