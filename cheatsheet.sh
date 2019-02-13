@@ -65,17 +65,23 @@ else
   
   elif [ $CHEATSHEET == "gpg" ]; then
     
-    sj_gash_print_title Retrieve key
+    sj_gash_print_title Retrieve my key
     sj_gash_print_body "gpg --receive-keys simon@jakowicz.com"
 
-    sj_gash_print_title "Encrypt using my private key"
-    sj_gash_print_body "gpg -e -r simon@jakowicz.com -o"
+    sj_gash_print_title "Encrypt using my public key"
+    sj_gash_print_body "gpg -e -r simon@jakowicz.com -o <output-file>"
+    
+    sj_gash_print_title "Export my public key"
+    sj_gash_print_body "gpg --export simon@jakowicz.com > <public-key-file>"
+    
+    sj_gash_print_title "Import my public key"
+    sj_gash_print_body "gpg --import <public-key-file>"
 
     sj_gash_print_title "Decrypt symmetric or asymmetric"
-    sj_gash_print_body "gpg -d -o"
+    sj_gash_print_body "gpg -d <gpg-file>"
 
     sj_gash_print_title "Symmetric Encryption"
-    sj_gash_print_body "gpg --symmetric"
+    sj_gash_print_body "gpg --symmetric <file-to-encrypt>"
   
   elif [ $CHEATSHEET == "growpart" ]; then
     
