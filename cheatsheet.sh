@@ -133,6 +133,9 @@ else
     sj_gash_print_title "Capture the traffic from a specific interface, source, destination and destination port"
     sj_gash_print_body "tcpdump -i eth0 src <source-ip e.g. 192.168.0.100> and dst <dst-ip 12.34.56.78> and dst port <dest-port e.g. 80>"
 
+    sj_gash_print_title "-nn Do not resolve hostnames or ports. -s0 will set the packet length to unlimited for maximum output"
+    sj_gash_print_body "tcpdump -i eth0 -nn -s0 -v port 80"
+
   elif [ $CHEATSHEET == "xfs_growfs" ]; then
     
     sj_gash_print_title "Extend a bfs filesystem after resizing the partition"
